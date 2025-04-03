@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "inRiver Extension Tools",
+  "version": "1.0.0",
+  "description": "Productivity tools for inRiver Control Center: Open extensions in new tabs and Rerun all queued events with one click",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "permissions": [
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.productmarketingcloud.com/*",
+        "https://*.inriver.com/*"
+      ],
+      "js": ["open-extension.js", "rerun-all.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "homepage_url": "https://github.com/yourusername/pxm-inriver",
+  "author": "your.email@domain.com"
+}
